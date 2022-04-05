@@ -1,0 +1,58 @@
+<h1>Reactive Form Validation</h1>
+
+<form [formGroup]="form" (ngSubmit)="afterSubmit()">
+    <p>
+        <input type="text" id="name" formControlName="name" placeholder="Enter Name"  />
+    </p>
+
+    <div *ngIf="f['name'].invalid && (f['name'].touched || f['name'].dirty)">
+
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+         Name is required
+        </div>
+    </div>
+
+        <!--div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+            Name should be 5 chars long
+           </div>
+
+           <div *ngIf="f['name'].errors && f['name'].errors['pattern']">
+            Name can have only alphabets
+           </div-->
+
+           <p>
+            <input type="text" id="email" formControlName="email" placeholder="Enter Brand"  />
+        </p>
+    
+        <div *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+             Email is required
+            </div>
+        </div>
+
+        <p>
+            <input type="text" id="password" formControlName="password" placeholder="Enter Password" />
+        </p>
+    
+        <div *ngIf="f['password'].invalid && (f['password'].touched || f['password'].dirty)">
+    
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+             Password is required
+            </div>
+        </div>
+        <p>
+            <input type="text" id="mobile" formControlName="mobile" placeholder="Enter Mobile"  />
+        </p>
+    
+        <div *ngIf="f['mobile'].invalid && (f['mobile'].touched || f['price'].dirty)">
+    
+            <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">
+             Price is required
+            </div>
+        </div>
+        
+        
+
+        <p><button type="submit">Submit</button></p>
+</form>

@@ -1,0 +1,31 @@
+<h1>Reactive Form Validation</h1>
+
+<form [formGroup]="form" (ngSubmit)="afterSubmit()">
+
+
+           <p>
+            <input type="text" id="email" formControlName="email" placeholder="Enter Brand"  />
+        </p>
+    
+        <div *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)">
+    
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+             Email is required
+            </div>
+        </div>
+
+        <p>
+            <input type="text" id="password" formControlName="password" placeholder="Enter Password" />
+        </p>
+    
+        <div *ngIf="f['password'].invalid && (f['password'].touched || f['password'].dirty)">
+    
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+             Password is required
+            </div>
+        </div>
+        
+        
+
+        <p><button type="submit">Submit</button></p>
+</form>
